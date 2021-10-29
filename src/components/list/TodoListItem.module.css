@@ -1,0 +1,23 @@
+.item {
+  display: grid;
+  grid-template-columns: 1fr auto auto auto;
+  gap: 1rem;
+  background: #f1f1f171;
+  border-radius: 10px;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  transition: all 0.2s linear;
+}
+
+.delete,
+.done {
+  transition: all 0.2s linear;
+}
+
+.delete:hover {
+  color: #b82b2b;
+}
+
+.done:hover {
+  color: #41a541;
+}

@@ -1,0 +1,25 @@
+.header {
+  align-items: center;
+  display: flex;
+}
+
+.newtodo {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background: #cecece;
+  margin: 1rem;
+  padding: 0.8rem;
+  font-family: var(--type-first);
+}
+
+.newtodo:focus {
+  border: 1px solid #333;
+}
+
+.addtodo {
+  margin-right: 1rem;
+  padding: 0.8rem;
+  margin-top: 0.5rem;
+}

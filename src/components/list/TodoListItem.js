@@ -8,7 +8,7 @@ import { availableColors, capitalize } from '../../features/filters/colors';
 
 const TodoListItem = () => {
   const [hover, setHover] = useState(false);
-  const [itemBorder, setItemBorder] = useState('none');
+  const [itemBorder, setItemBorder] = useState('');
   const [select, setSelect] = useState('');
   const itemsList = useSelector(selectTodoList);
 
@@ -22,7 +22,7 @@ const TodoListItem = () => {
       {itemsList.map((item, index) => (
         <div
           className={styles.item}
-          style={{ border: '2px solid ' + itemBorder }}
+          style={{ border: itemBorder ? '2px solid ' + itemBorder : 'none' }}
           key={index}
           onMouseEnter={() => setHover(true)}
           onMouseLeave={() => setHover(false)}
@@ -36,6 +36,7 @@ const TodoListItem = () => {
               value={select}
               onChange={selectColor}
             >
+              <option value=''>Choose a color</option>
               {availableColors.map((color) => (
                 <option key={color} value={color}>
                   {capitalize(color)}

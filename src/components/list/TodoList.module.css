@@ -8,4 +8,5 @@
   max-height: auto;
   overflow-y: auto;
   padding: 0.8rem;
+  transition: all 0.2s linear;
 }

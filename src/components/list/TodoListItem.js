@@ -4,27 +4,41 @@ import { selectTodoList } from '../../store/todo';
 import styles from './TodoListItem.module.css';
 import { MdDone } from 'react-icons/md';
 import { MdDelete } from 'react-icons/md';
-import { availableColors } from '../../features/filters/colors';
+import { availableColors, capitalize } from '../../features/filters/colors';
 
 const TodoListItem = () => {
   const [hover, setHover] = useState(false);
+  const [itemBorder, setItemBorder] = useState('none');
+  const [select, setSelect] = useState('');
   const itemsList = useSelector(selectTodoList);
+
+  function selectColor({ target }) {
+    setSelect(target.value);
+    setItemBorder(target.value);
+  }
 
   return (
     <div>
       {itemsList.map((item, index) => (
         <div
           className={styles.item}
+          style={{ border: '2px solid ' + itemBorder }}
           key={index}
           onMouseEnter={() => setHover(true)}
           onMouseLeave={() => setHover(false)}
         >
           {item}
           {hover && (
-            <select name='chooseColors' id='chooseColors'>
+            <select
+              name='chooseColors'
+              id='chooseColors'
+              className={styles.select}
+              value={select}
+              onChange={selectColor}
+            >
               {availableColors.map((color) => (
                 <option key={color} value={color}>
-                  {color}
+                  {capitalize(color)}
                 </option>
               ))}
             </select>

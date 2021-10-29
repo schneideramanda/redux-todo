@@ -14,10 +14,21 @@
   transition: all 0.2s linear;
 }
 
+.select {
+  background: #e2e2e2;
+  padding: 0.2rem;
+  border: 1px solid #333;
+  border-radius: 10px;
+}
+
 .delete:hover {
   color: #b82b2b;
 }
 
 .done:hover {
   color: #41a541;
+}
+
+.select:focus {
+  outline: none;
 }

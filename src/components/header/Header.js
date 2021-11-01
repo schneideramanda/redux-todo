@@ -8,8 +8,23 @@ const Header = () => {
   const dispatch = useDispatch();
 
   function handleClick() {
-    dispatch(saveTodo({ item: input, name: input }));
-    setInput('');
+    if (input !== '') {
+      dispatch(saveTodo({ title: input }));
+      setInput('');
+    } else {
+      alert('You need to write a task to be done');
+    }
+  }
+
+  function handleKeyDown(event) {
+    if (event.key === 'Enter') {
+      if (input !== '') {
+        dispatch(saveTodo({ title: input }));
+        setInput('');
+      } else {
+        alert('You need to write a task to be done');
+      }
+    }
   }
 
   return (
@@ -20,6 +35,7 @@ const Header = () => {
         placeholder='What needs to be done?'
         value={input}
         onChange={({ target }) => setInput(target.value)}
+        onKeyDown={handleKeyDown}
       />
       <button className={styles.addtodo} onClick={handleClick}>
         Add

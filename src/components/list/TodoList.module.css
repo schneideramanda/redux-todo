@@ -10,3 +10,10 @@
   padding: 0.8rem;
   transition: all 0.2s linear;
 }
+
+.result {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}

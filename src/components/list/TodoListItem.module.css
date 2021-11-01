@@ -12,6 +12,7 @@
 .delete,
 .done {
   transition: all 0.2s linear;
+  cursor: pointer;
 }
 
 .select {
@@ -31,4 +32,14 @@
 
 .select:focus {
   outline: none;
+}
+
+.disabledText {
+  color: #333 !important;
+  opacity: 0.5;
+}
+
+.disabled {
+  opacity: 0.5;
+  background: #ccc;
 }

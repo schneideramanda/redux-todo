@@ -21,7 +21,11 @@ const TodoList = () => {
     (selectedColors.length !== 0 &&
       !todoList.some((item) => selectedColors.includes(item.color)))
   )
-    return <p className={styles.result}>Sem resultados para este filtro...</p>;
+    return (
+      <p className={styles.result}>
+        No search results available for this filter...
+      </p>
+    );
 
   return (
     <div className={styles.container}>
@@ -35,7 +39,7 @@ const TodoList = () => {
               color={color}
             />
           ))
-        : todoList.map(({ id, title, completed, status, color }) => (
+        : todoList.map(({ id, title, completed, color }) => (
             <TodoListItem
               id={id}
               title={title}

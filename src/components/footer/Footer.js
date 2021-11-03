@@ -1,9 +1,9 @@
 import React from 'react';
 import Actions from './Actions';
 import Colors from './Colors';
-import styles from './Footer.module.css';
 import Remaining from './Remaining';
 import Status from './Status';
+import styles from './Footer.module.css';
 
 const Footer = () => {
   return (

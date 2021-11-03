@@ -11,7 +11,12 @@ const Remaining = () => {
       <h5>Remaining Todos</h5>
       {todoList.length === 0 && ' No items left in the list...'}
       {todoList.length === 1 && todoList.length + ' Item left in the list...'}
-      {todoList.length > 1 && todoList.length + ' Items left in the list...'}
+      {todoList.length > 1 && (
+        <div className={styles.countContainer}>
+          <strong>{todoList.length}</strong>
+          <p>Items left in the list...</p>
+        </div>
+      )}
     </div>
   );
 };

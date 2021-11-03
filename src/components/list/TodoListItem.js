@@ -30,9 +30,10 @@ const TodoListItem = ({ id, title, completed, color }) => {
   const capitalize = (s) => s[0].toUpperCase() + s.slice(1);
 
   return (
-    <div>
+    <div className='animateLeft'>
       <div
-        className={styles.item}
+        id={id}
+        className={`${styles.item} grow`}
         style={{
           border: itemBorder ? '2px solid ' + itemBorder : 'none',
           background: completed ? '#8dbf8da6' : '#f1f1f171',

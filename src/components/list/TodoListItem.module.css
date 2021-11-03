@@ -6,7 +6,7 @@
   border-radius: 10px;
   padding: 0.5rem;
   margin-bottom: 1rem;
-  transition: all 0.2s linear;
+  transition: all 0.2s ease-in-out;
 }
 
 .delete,
@@ -42,4 +42,16 @@
 .disabled {
   opacity: 0.5;
   background: #ccc;
+}
+
+.delete,
+.done,
+.select {
+  display: none;
+}
+
+.item:hover .delete,
+.item:hover .done,
+.item:hover .select {
+  display: inline-block;
 }
